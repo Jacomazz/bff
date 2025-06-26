@@ -1,6 +1,6 @@
 package com.bff.bff.models.shipping;
 
-import it.apuliadigital.shipping.enums.EnumStatus;
+import com.bff.bff.models.shipping.EnumStatus;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

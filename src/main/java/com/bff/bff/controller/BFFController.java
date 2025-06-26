@@ -1,6 +1,6 @@
 package com.bff.bff.controller;
 
-import com.bff.bff.models.catalog.BookDTO;
+import com.bff.bff.models.catalog.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
@@ -11,18 +11,16 @@ import java.util.List;
 @RequestMapping("/amazon")
 public class BFFController {
 
-
     @Bean
     public RestTemplate getRestTemplate() {
         return new RestTemplate();
     }
 
-//    @Autowired
-//    private BFFServiceImpl serivce;
-
     @GetMapping("")
-    public List<Object> getBook() {
-        List<Object> bookList = (List<Object>) getRestTemplate().getForObject("localhost:8083/catalog",)
+    public List<BookDTO> getBook() {
+        List<BookDTO> bookList = (List<BookDTO>) getRestTemplate().getForObject("localhost:8083/catalog", List<BookDTO> list);
+
+        return bookList;
     }
 
     @PostMapping("")
