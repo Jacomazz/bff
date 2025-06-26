@@ -18,8 +18,7 @@ public class BFFController {
 
     @GetMapping("")
     public List<BookDTO> getBook() {
-        List<BookDTO> bookList = (List<BookDTO>) getRestTemplate().getForObject("localhost:8083/catalog", List<BookDTO> list);
-
+        List<BookDTO> bookList = (List<BookDTO>) getRestTemplate().getForObject("http://localhost:8083/catalog", List.class);
         return bookList;
     }
 
